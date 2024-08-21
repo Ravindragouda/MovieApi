@@ -2,7 +2,6 @@ package com.ravindra_gouda.movies.Service;
 
 import com.ravindra_gouda.movies.Entity.Movie;
 import com.ravindra_gouda.movies.Repository.MovieRepository;
-import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,7 +17,7 @@ public class MovieService {
         return movieRepository.findAll();
     }
 
-    public Optional<Movie> singleMovie(ObjectId id) {
-        return movieRepository.findById(id);
+    public Optional<Movie> singleMovie(String imdbId) {
+        return movieRepository.findByImdbId(imdbId);
     }
 }
